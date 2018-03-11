@@ -1,0 +1,15 @@
+light.ge_14294_inwall_smart_dimmer_level_2:
+  friendly_name: Office Hats
+  zwave.ge_14294_inwall_smart_dimmer:
+    friendly_name: Cellar Hall Dimmer
+    node_name: Cellar Hall Dimmer
+    product_name: 14294 In-Wall Smart Dimmer
+zwave.ge_14294_inwall_smart_dimmer:
+  friendly_name: Cellar Hallway Dimmer
+zwave.aeotec_zw090_zstick_gen5_us:
+  hidden: true
+light.ge_14294_inwall_smart_dimmer_level:
+  friendly_name: Cellar Hallway Dimmer
+  node_id: 7
+light.homeseer_hswd100_wall_dimmer_level:
+  friendly_name: Theater Hats Dimmer

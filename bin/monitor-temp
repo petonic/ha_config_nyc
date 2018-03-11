@@ -1,0 +1,68 @@
+#! /usr/bin/env python3
+"""monitor-temp -- monitors 3d temperatures
+
+Usage:
+    monitor-temp [-h temp_hold_time] [-t] [-e] [-ea petonic@yahoo.com]
+"""
+import json
+import paho.mqtt.client as mqtt #import the client1
+import time
+
+broker_address = 'panchome.lan'
+topic_octoprint = 'octoprint/temperature/bed'
+
+verbose=True
+
+def main(
+        delay: ('Delay(hold) Time', 'option', 'd'),
+        telegram: ('Use Telegram for notification', 'flag' ),
+        email: ('Use email address to notify', 'flag', 'e'),
+        reach_announce: ('Whether to send alert when temperature is achieved?',
+                         'flag', 'r'),
+        verbose_mode: ('Verbose mode', 'flag', 'v'),
+        email_address: ('Email address to notify', 'option',
+                            'a') = 'petonic@yahoo.com',
+    ):
+    global verbose
+
+
+    print('delay = {}'.format(repr(delay)))
+    print('telegam = {}'.format(repr(telegram)))
+    print('email = {}'.format(repr(email)))
+    if verbose_mode:
+        gVerbose = True
+
+    if delay == None:
+        delay = 5 * 60;
+
+
+    # Connect to MQTT broker
+    if verbose:
+        print('Subscribed!  Broker={}, topic={}'.format(
+             broker_address, topic_octoprint))
+
+    client = mqtt.Client('monitor-temp')
+    client.username_pw_set('ha-mqtt', 'asdfZXC12')
+    client.connect(broker_address)
+    client.subscribe(topic_octoprint)
+    client.publish(topic_octoprint, '39.2')
+
+    while True:
+        client.loop_start()
+        time.sleep(60)
+
+def on_temp_message(client, userdata, message):
+    if verbose:
+        print('{}: Received MQTT message from broker={}, topic={}'
+              ', client={}, userdata={}'.format(
+                      time.asctime(),
+                      repr(broker), repr(client),
+                      repr(userdata)))
+    print('\tReceived mesage: {}'.format(repr(message)))
+
+
+
+
+
+if __name__ == '__main__':
+    import plac; plac.call(main)
