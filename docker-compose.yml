@@ -1,0 +1,36 @@
+# docker-compose.yml
+version: "2"
+services:
+  mqtt:
+    container_name: mqtt
+    image: mqtt
+    network_mode: host
+    privileged: true
+    restart: unless-stopped
+    volumes:
+      - /home/pi/hass/mosquitto:/config/mosquitto
+
+  hass:
+    container_name: hass
+    image: hass
+    network_mode: host
+    # net: bridge
+    privileged: true
+    restart: unless-stopped
+    volumes:
+      - /home/pi/hass:/config:rw
+      - /etc/localtime:/etc/localtime:ro
+      - /dev/ttyACM0:/zwaveusbstick:rw
+
+
+  homebridge:
+    container_name: homebridge
+    image: oznu/homebridge:raspberry-pi  # use "raspberry-pi" instead of "latest" for arm devices
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      - TZ=America/New_York
+      - PGID=1000
+      - PUID=1000
+    volumes:
+      - /home/pi/hass/homebridge:/config/homebridge
