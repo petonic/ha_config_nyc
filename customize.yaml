@@ -9,7 +9,30 @@ zwave.ge_14294_inwall_smart_dimmer:
 zwave.aeotec_zw090_zstick_gen5_us:
   hidden: true
 light.ge_14294_inwall_smart_dimmer_level:
-  friendly_name: Cellar Hallway Dimmer
+  friendly_name: Downstairs Hallway Hats
+  icon: mdi:spotlight-beam
   node_id: 7
 light.homeseer_hswd100_wall_dimmer_level:
-  friendly_name: Theater Hats Dimmer
+  friendly_name: Theater Hats
+  icon: mdi:spotlight-beam
+light.level:
+  friendly_name: Guest Bath Hat
+  icon: mdi:spotlight-beam
+light.level_2:
+  friendly_name: Guest Bath Lamps
+  icon: mdi:candle
+media_player.big_ass_tv:
+  friendly_name: Big Ass TV
+switch.sonoff2:
+  friendly_name: MPMini Light
+  icon: mdi:track-light
+switch.sonoff3d_printer:
+  friendly_name: MP Mini 3D Printer
+  icon: mdi:printer-3d
+switch.sonoff3:
+  friendly_name: MP Mini Enclosure Fan
+  icon: mdi:fan
+light.theater_led_level:
+  icon: mdi:link
+zwave.ge_14294_inwall_smart_dimmer_2:
+  node_name: Office Hats

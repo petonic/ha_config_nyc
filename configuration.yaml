@@ -71,7 +71,12 @@ zwave:
 # Sharp Aquos TV
 media_player:
   - platform: aquostv
-    host: 192.168.0.10
+    host: 192.168.86.30
+    port: 10003
+    username: petonic
+    password: asdfasdf
+    name: big_ass_tv
+    power_on_enabled: true
 
 
 # Cloud

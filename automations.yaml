@@ -1,1 +1,12 @@
-[]
+- action:
+  - alias: ''
+    data:
+      message: Double Press On
+      name: 'Office_Hats '
+    service: logbook.log
+  alias: Office Hats Double Tap On
+  condition: []
+  id: '1522860466844'
+  trigger:
+  - event: start
+    platform: homeassistant

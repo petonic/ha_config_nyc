@@ -1,18 +1,32 @@
 light.homeseer_hswd100_wall_dimmer_level:
+  name: Theatre Hats
   platform: zwave
   unique_id: 5-72057594126630913
 light.theater_led_level:
+  name:
   platform: zwave
   unique_id: 6-72057594143408129
 light.ge_14294_inwall_smart_dimmer_level:
+  name:
   platform: zwave
   unique_id: 7-72057594160185345
 light.ge_14294_inwall_smart_dimmer_level_2:
+  name:
   platform: zwave
   unique_id: 8-72057594176962561
 media_player.home_theater:
+  name:
   platform: apple_tv
   unique_id: be75dc4862e0a1403a97c6fc1f32c9544fadd4613bf83d5ad8ea859ff7c704be
 remote.home_theater:
+  name:
   platform: apple_tv
   unique_id: be75dc4862e0a1403a97c6fc1f32c9544fadd4613bf83d5ad8ea859ff7c704be
+light.level:
+  name:
+  platform: zwave
+  unique_id: 9-72057594193739777
+light.level_2:
+  name:
+  platform: zwave
+  unique_id: 10-72057594210516993
