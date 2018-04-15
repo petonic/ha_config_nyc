@@ -1,8 +1,8 @@
 light.ge_14294_inwall_smart_dimmer_level_2:
   friendly_name: Office Hats
   zwave.ge_14294_inwall_smart_dimmer:
-    friendly_name: Cellar Hall Dimmer
-    node_name: Cellar Hall Dimmer
+    friendly_name: Office Hats
+    node_name: Office Hats
     product_name: 14294 In-Wall Smart Dimmer
 zwave.ge_14294_inwall_smart_dimmer:
   friendly_name: Cellar Hallway Dimmer
@@ -35,4 +35,5 @@ switch.sonoff3:
 light.theater_led_level:
   icon: mdi:link
 zwave.ge_14294_inwall_smart_dimmer_2:
+  friendly_name: Office Hats
   node_name: Office Hats
